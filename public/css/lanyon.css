@@ -440,13 +440,25 @@ a.pagination-item:hover {
 .theme-base-08 .sidebar,
 .theme-base-08 .sidebar-toggle:active,
 .theme-base-08 #sidebar-checkbox:checked ~ .sidebar-toggle {
-  background-color: #ac4142;
+  background-color: #ac4142; 
 }
 .theme-base-08 .container a,
 .theme-base-08 .sidebar-toggle,
 .theme-base-08 .related-posts li a:hover {
   color: #ac4142;
 }
+/*Anagh-red*/
+.theme-base-02 .sidebar,
+.theme-base-02 .sidebar-toggle:active,
+.theme-base-02 #sidebar-checkbox:checked ~ .sidebar-toggle {
+  background-color: #f10f0f; 
+}
+.theme-base-02 .container a,
+.theme-base-02 .sidebar-toggle,
+.theme-base-02 .related-posts li a:hover {
+  color: #f10f0f;
+}
+
 
 /* Orange */
 .theme-base-09 .sidebar,
