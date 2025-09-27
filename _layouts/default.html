@@ -3,29 +3,68 @@
 
   {% include head.html %}
 
-  <body class="theme-base-00">
+ <body class="theme-base-08">
 
-    {% include sidebar.html %}
+  {% include sidebar.html %}
 
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
+  <!-- Wrap container -->
+  <div class="wrap">
+
+    <!-- Masthead -->
+    <div class="masthead">
+      <div class="container masthead-container">
+        <div class="masthead-left">
           <h3 class="masthead-title">
             <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
             <small>{{ site.tagline }}</small>
           </h3>
         </div>
-      </div>
 
-      <div class="container content">
-        {{ content }}
+        <div class="masthead-right">
+          <button id="dark-mode-toggle" title="Toggle dark mode">
+            <i class="fa fa-moon"></i>
+          </button>
+        </div>
       </div>
     </div>
 
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    <!-- Main content -->
+    <div class="container content">
+      {{ content }}
+    </div>
 
-    <script src='{{ site.baseurl }}/public/js/script.js'></script>
-  </body>
-</html>
+  </div>
+
+  <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+  <script src='{{ site.baseurl }}/public/js/script.js'></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
+    const btn = document.querySelector("#dark-mode-toggle");
+    const icon = btn.querySelector("i");
+
+    if (localStorage.getItem("darkMode") === "true") {
+      body.classList.add("dark-mode");
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+    }
+
+    btn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      const isDark = body.classList.contains("dark-mode");
+      localStorage.setItem("darkMode", isDark);
+
+      if (isDark) {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+      } else {
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+      }
+    });
+  });
+  </script>
+
+</body>
+

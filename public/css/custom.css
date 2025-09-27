@@ -1,0 +1,286 @@
+/* ======================================================
+   Global reset
+   ====================================================== */
+body {
+  margin: 0;
+  max-width: none;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* ======================================================
+   Container inside wrap
+   ====================================================== */
+.container.content {
+  margin: 0;
+  max-width: none;
+  padding: 0;
+}
+
+/* ======================================================
+   Main content wrapper
+   ====================================================== */
+.wrap {
+  margin-left: 300px;
+  margin-right: 2rem;
+  width: auto;
+  max-width: none;
+  padding: 2rem;
+  text-align: left;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* ======================================================
+   Headings
+   ====================================================== */
+.container.content h1,
+.container.content h2,
+.container.content h3,
+.container.content h4,
+.container.content h5,
+.container.content h6,
+.page-title, .post-title, .masthead-title {
+  text-align: left !important;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ======================================================
+   Lists, paragraphs, blockquotes
+   ====================================================== */
+.container.content p,
+.container.content ol,
+.container.content ul,
+.container.content blockquote {
+  max-width: 100ch;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Spacing for readability */
+.container.content h2,
+.container.content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.container.content ol,
+.container.content ul {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ======================================================
+   Sidebar responsive behavior
+   ====================================================== */
+@media (max-width: 48em) {
+  .wrap {
+    margin-left: 0;
+    margin-right: 0;
+    width: auto;
+    padding: 1rem;
+  }
+}
+
+/* Sidebar text color overrides (light mode) */
+.sidebar {
+  color: #000;
+}
+.sidebar a {
+  color: #000;
+}
+.sidebar a:hover {
+  color: #000;
+}
+
+/* ==========================
+   THEME VARIABLES
+   ========================== */
+.theme-base-08 { --theme-color: #ac4142; } /* Red */
+.theme-base-09 { --theme-color: #d28445; } /* Orange */
+.theme-base-0a { --theme-color: #f4bf75; } /* Yellow */
+.theme-base-0b { --theme-color: #90a959; } /* Green */
+.theme-base-0c { --theme-color: #75b5aa; } /* Cyan */
+.theme-base-0d { --theme-color: #6a9fb5; } /* Blue */
+.theme-base-0e { --theme-color: #aa759f; } /* Purple */
+.theme-base-0f { --theme-color: #8f5536; } /* Brown */
+
+/* ==========================
+   DARK MODE FOR LANYON
+   ========================== */
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+/* Headings use normal text color */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: inherit;
+}
+
+/* Sidebar background + theme text */
+body.dark-mode .sidebar {
+  background-color: #2b2b2b;
+  color: var(--theme-color, #ac4142);
+}
+body.dark-mode .sidebar a {
+  color: var(--theme-color, #ac4142);
+}
+body.dark-mode .sidebar a:hover {
+  color: #fff;
+}
+
+/* Sidebar toggle button */
+body.dark-mode .sidebar-toggle {
+  background-color: #000;
+  color: var(--theme-color, #ac4142);
+  border: none;
+}
+body.dark-mode .sidebar-toggle:hover,
+body.dark-mode .sidebar-toggle:focus {
+  opacity: 0.8;
+}
+
+/* Links in main content */
+body.dark-mode a {
+  color: var(--theme-color, #ac4142);
+}
+
+/* Code blocks and inline code */
+body.dark-mode code,
+body.dark-mode pre {
+  background-color: #2d2d2d;
+  color: #d4d4d4;
+}
+
+/* Blockquotes */
+body.dark-mode blockquote {
+  border-left-color: #444;
+  color: #ccc;
+}
+
+/* Tables */
+body.dark-mode table,
+body.dark-mode th,
+body.dark-mode td {
+  border-color: #555;
+}
+
+/* Lists */
+body.dark-mode ul li,
+body.dark-mode ol li {
+  color: #e0e0e0;
+}
+
+/* ==========================
+   DARK MODE TOGGLE BUTTON
+   ========================== */
+/* Flex layout for masthead */
+/* Masthead flex container */
+/* Masthead flex container */
+.masthead-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; /* don’t wrap content */
+  width: 100%;
+}
+
+/* Left side title uses all available space */
+.masthead-left {
+  flex: 1 1 auto;
+  min-width: 0; /* prevents shrinking to zero */
+}
+
+/* Right side button takes only the space it needs */
+.masthead-right {
+  flex: 0 0 auto;
+}
+
+/* Ensure masthead does not cover wrap */
+.masthead {
+  position: relative;
+  z-index: 2;
+}
+
+/* Dark mode toggle button */
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: inherit;
+}
+
+#dark-mode-toggle:hover {
+  opacity: 0.7;
+}
+
+body.dark-mode #dark-mode-toggle {
+  color: var(--theme-color, #ac4142);
+}
+
+
+/* Optional: readability constraint in dark mode */
+body.dark-mode .wrap p,
+body.dark-mode .wrap li,
+body.dark-mode .wrap blockquote {
+  max-width: 100ch;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Footnotes*/
+
+.footnotes {
+  border-top: 1px solid #ccc;  /* light gray line */
+  margin-top: 2rem;           /* space above the line */
+  padding-top: 1rem;          /* space below the line */
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 2rem 0;
+}
+
+.footnotes hr {
+  border-color: #aaa; /* slightly darker if you want */
+}
+
+body.dark-mode .footnotes {
+  border-top: 1px solid #444; /* softer line in dark mode */
+}
+
+/* ======================================================
+   LaTeX-style fonts for body and headings
+   ====================================================== */
+
+/* Body text: serif like standard LaTeX */
+body {
+  font-family: "Latin Modern Roman", "Computer Modern Serif", "Times New Roman", serif;
+  line-height: 1.5;
+}
+
+/* Headings: sans-serif like LaTeX section titles */
+h1, h2, h3, h4, h5, h6,
+.page-title,
+.post-title,
+.masthead-title {
+  font-family: "Latin Modern Sans", "Computer Modern Sans", Arial, sans-serif !important;
+  font-weight: normal;
+  line-height: 1.2;
+  color: inherit; /* respects dark mode or theme color */
+}
+
+
+
